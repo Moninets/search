@@ -1,0 +1,93 @@
+$title-color: #607875;
+.so-header {
+  padding-bottom: 5px;
+  .so-nav {
+    display: flex;
+    justify-content: space-between;
+    &__logo {
+      padding-top: 20px;
+      display: inline-block;
+      a {
+        padding-left: 30px;
+        @include breakpoint(small down) {
+          padding: 0;
+        }
+      }
+      @include breakpoint(small down) {
+        padding: 0;
+      }
+    }
+    @include breakpoint(small down) {
+      display: block;
+      padding: 10px 15px 5px;
+      position: fixed;
+      background-color: #fff;
+      z-index: 1;
+    }
+  }
+  .title-bar {
+    //background-color: transparent;
+    display: inline-block;
+    float: right;
+    .menu-icon {
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .top-bar {
+    background-color: transparent;
+    padding-right: 10px;
+    .so-list, .menu {
+      background-color: transparent;
+      padding-top: 0.3rem;
+      .so-item, li {
+        + .so-item, li {
+          padding-left: 35px;
+          @include breakpoint(small down) {
+            padding: 0;
+          }
+        }
+        .so-link, a {
+          position: relative;
+          font-family: "Muli";
+          font-weight: 700;
+          font-size: 0.8rem;
+          line-height: 2rem;
+          letter-spacing: 0.1rem;
+          text-transform: uppercase;
+          color: $title-color;
+          &:hover {
+            color: #73c8af;
+            &:before {
+              position: absolute;
+              content: '';
+              border: 1px solid #73c8af;
+              width: 1rem;
+              left: 40%;
+            }
+            &:after {
+              position: absolute;
+              content: '';
+              border: 1px solid #73c8af;
+              width: 1rem;
+              left: 40%;
+              bottom: 0.8rem;
+            }
+          }
+          @include  breakpoint (medium down) {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

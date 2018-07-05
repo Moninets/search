@@ -1,0 +1,599 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-meter-element;
+@include foundation-progress-element;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+@import "slick.scss";
+@import 'parts/header';
+@import 'parts/contact';
+
+$title-color: #607875;
+$brand-color: #00a98e;
+
+@mixin title {
+  font-family: 'Muli', sans-serif;
+  font-weight: 700;
+}
+
+@mixin content {
+  font-family: 'Lato', sans-serif;
+}
+
+/* BEGAN BANNER */
+.so-banner {
+  background: url(../img/banner_bg.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 153px 0 6.9rem;
+  &__wrapper {
+    @include breakpoint(medium) {
+      padding: 0 106px;
+    }
+  }
+  h1 {
+    @include title;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    margin: 0;
+    padding-bottom: 20px;
+    @include breakpoint(small down) {
+      font-size: 40px;
+    }
+  }
+  p {
+    @include content;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #fff;
+    padding-bottom: 33px;
+    margin: 0;
+    @include breakpoint (small down) {
+      font-size: 14px;
+      text-align: left;
+    }
+  }
+  .so-btn {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    width: 245px;
+    height: 2.8rem;
+    border-radius: 0.4rem;
+    background-color: $brand-color;
+    color: #fff;
+    padding: 17px;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: #fff;
+      border-color: $brand-color;
+      color: $brand-color;
+      transition: 0.2s all ease-in;
+    }
+  }
+  @include breakpoint (small down) {
+    padding-top: 100px;
+  }
+}
+
+//AND BANNER
+
+// BEGAN TOOLS
+
+.so-tools {
+  padding: 7.5rem 0;
+  &__description {
+    position: relative;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10rem;
+
+    &:before {
+      position: absolute;
+      content: '';
+      border: 1px solid #73c8af;
+      width: 28%;
+      top: -37%;
+      left: 50%;
+      transform: translateX(-50%);
+      @include breakpoint (small down) {
+        top: -25%;;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      border: 1px solid #73c8af;
+      width: 28%;
+      bottom: -38%;
+      left: 50%;
+      transform: translateX(-50%);
+      @include breakpoint (small down) {
+        bottom: -25%;
+      }
+    }
+    @include breakpoint (small down) {
+      font-size: 11px;
+      margin-bottom: 50px;
+    }
+  }
+  .so-row {
+    padding-bottom: 3rem;
+    @include breakpoint (small down) {
+      padding: 0;
+    }
+  }
+  .so-step {
+    padding-left: 6rem;
+    padding-top: 50px;
+    img {
+      vertical-align: top;
+    }
+    &__description {
+      @include title;
+      font-size: 1.5rem;
+      color: #a5a5a5;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .so-content {
+      display: inline-block;
+      padding-top: 0.5em;
+      padding-left: 1rem;
+      &__description {
+        @include title;
+        font-size: 1.5rem;
+        color: #a5a5a5;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      h4 {
+        @include title;
+        font-size: 1.52rem;
+        color: $brand-color;
+        line-height: 1;
+        p {
+          margin: 0;
+        }
+      }
+    }
+    @include breakpoint (small down) {
+      padding: 0 0 50px 0;
+      text-align: center;
+    }
+  }
+  @include breakpoint (small down) {
+    padding-top: 70px;
+  }
+}
+
+// AND TOOLS
+
+//START APPLY
+
+.so-apply {
+  background: url(../img/address_bg.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 68px 0 85px;
+  .so-subscribe {
+    border-bottom: 2px solid #b5d99a;
+    margin: 0 15px;
+    padding: 0 20px;
+    p {
+      display: inherit;
+      width: 100%;
+    }
+    input {
+      @include content;
+      font-weight: 700;
+      font-size: 14px;
+      background: transparent;
+      color: #a2b1b0;
+      text-transform: uppercase;
+      border: none;
+      box-shadow: none;
+      letter-spacing: 0.1em;
+      margin: 0;
+      padding: 0;
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+      @include breakpoint (medium down) {
+        font-size: 8px;
+      }
+    }
+    button{
+      @include content;
+      font-weight: 700;
+      font-size: 14px;
+      background: transparent;
+      color: #a2b1b0;
+      text-transform: uppercase;
+      border: none;
+      box-shadow: none;
+      letter-spacing: 0.1em;
+      margin: 0;
+      padding: 0;
+      &:focus {
+        box-shadow: none;
+        border: none;
+      }
+      @include breakpoint (medium down) {
+        font-size: 8px;
+      }
+    }
+    button, [type='submit'], [type='button'] {
+      @include content;
+      font-weight: 700;
+      font-size: 11px;
+      color: #b5d99a;
+      text-transform: uppercase;
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      width: 30%;
+      @include breakpoint (medium down) {
+        font-size: 8px;
+      }
+    }
+    @include breakpoint (medium down) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+// AND APPLY
+
+// BEGAN POST-LIST
+
+.so-post-list {
+  padding-top: 80px;
+  .so-post {
+    &__title {
+      @include title;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #555;
+      padding-top: 18px;
+      margin: 0;
+    }
+    &__description {
+      @include content;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #8e8e8e;
+      padding-top: 3px;
+      font-weight: 400;
+    }
+    @include breakpoint (medium down) {
+      padding-bottom: 40px;
+    }
+  }
+}
+
+// AND POST-LIST
+
+// BEGAN TEAM
+@mixin arrow {
+  position: absolute;
+  background: transparent;
+  font-size: 32px;
+  top: 22%;
+  color: #607875;
+}
+
+.so-team {
+  padding: 120px 0 95px;
+  .so-slider {
+    position: relative;
+    .so-member {
+      background-color: #fff;
+      opacity: 0.5;
+      &__image {
+        margin: auto;
+      }
+      &__title {
+        @include title;
+        font-weight: 600;
+        font-size: 18px;
+        color: $brand-color;
+        line-height: 1.55;
+        padding-top: 15px;
+        margin: 0;
+      }
+      &__description {
+        @include title;
+        font-size: 14px;
+        line-height: 2;
+        color: #a5a5a5;
+        margin: 0;
+      }
+    }
+    .slick-current {
+      opacity: 1;
+    }
+    &__arrow--left {
+      z-index: 1;
+      @include arrow;
+      left: 29%;
+      &:focus {
+        outline: none;
+      }
+      @include breakpoint (medium down) {
+        left: 0;
+        padding: 15px;
+        z-index: 1;
+      }
+    }
+    &__arrow--right {
+      z-index: 1;
+      @include arrow;
+      right: 29%;
+      &:focus {
+        outline: none;
+      }
+      @include breakpoint (medium down) {
+        right: 0;
+        padding: 15px;
+        z-index: 1;
+      }
+    }
+  }
+  .so-blockquote {
+    padding: 0;
+    blockquote {
+      position: relative;
+      @include content;
+      border: none;
+      font-size: 16px;
+      color: #00a98e;
+      line-height: 1.5;
+      font-style: italic;
+      text-align: center;
+      padding: 35px 0 0;
+      margin: 0;
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        border: 1px solid #00a98e;
+        width: 25%;
+      }
+      &:before {
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:after {
+        bottom: -25%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include breakpoint (medium down) {
+        font-size: 12px;
+      }
+    }
+  }
+  @include breakpoint (medium down){
+    padding-bottom: 60px;
+  }
+}
+
+// AND TEAM
+
+// BEGAN PARTNERS
+
+.so-partners {
+  padding-bottom: 12px;
+  background-color: #f5f3f3;
+  .so-row {
+    @include breakpoint (medium) {
+      max-width: 1290px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-top: 30px;
+  }
+  &__item {
+    padding-right: 10px;
+  }
+}
+
+// AND PARTNERS
+
+// BEGAN FOOTER
+
+.so-footer {
+  padding: 43px 0 62px;
+  background-color: #607875;
+  .so-logo {
+    @include breakpoint (small down) {
+      text-align: left;
+    }
+    @include breakpoint (medium down) {
+      padding-bottom: 20px;
+    }
+  }
+  &__description {
+    @include content;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #fff;
+    padding-bottom: 20px;
+  }
+  .so-navigation {
+    &__list, .menu {
+      list-style-type: none;
+      margin: 0;
+    }
+    &__item, li {
+      padding-bottom: 10px;
+      display: block;
+    }
+    &__link, a {
+      @include title;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1;
+      color: #fff;
+      transition: 0.1s all ease-in;
+      padding:0;
+      display: inline-block;
+      &:hover {
+        color: #73c8af;
+        border-bottom: 1px solid #73c8af;
+        transition: 0.1s all ease-in;
+      }
+    }
+  }
+  .so-contact {
+    &__list {
+      list-style-type: none;
+      margin: 0;
+      @include breakpoint (medium down) {
+        padding-top: 20px;
+      }
+    }
+    &__item {
+      @include title;
+      font-weight: 400;
+      color: #fff;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-bottom: 5px;
+    }
+    &__link {
+      @include title;
+      font-weight: 400;
+      color: #73c8af;
+      font-size: 16px;
+      line-height: 1.5;
+      transition: 0.1s all ease-in;
+      &:hover {
+        border-bottom: 1px solid #73c8af;
+        color: #73c8af;
+        transition: 0.1s all ease-in;
+      }
+    }
+  }
+  .so-socials {
+    &__list {
+      list-style-type: none;
+      padding-top: 30px;
+      margin: 0;
+    }
+    &__item {
+      display: inline-block;
+      + li {
+        padding-left: 25px;
+        @include breakpoint (large down) {
+          padding-left: 5px;
+        }
+        @include breakpoint (medium down) {
+          padding-left: 40px;
+        }
+      }
+    }
+    &__link {
+      @include title;
+      font-weight: 400;
+      color: #73c8af;
+      font-size: 16px;
+      line-height: 1.5;
+      transition: 0.1s all ease-in;
+      &:hover {
+        border-bottom: 1px solid #73c8af;
+        color: #73c8af;
+        transition: 0.1s all ease-in;
+      }
+    }
+  }
+}
+
+
+// AND FOOTER
+
+// BEGAN SCROLL
+.so-scroll {
+  position: fixed;
+  top: 45%;
+  right: 1rem;
+  border: 2px solid #73c8af;
+  border-radius: 5px;
+  &:hover {
+    background-color: $brand-color;
+    border-color: #fff;
+  }
+  &__arrow {
+    font-size: 2rem;
+    color: $brand-color;
+    padding: 15px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  @include breakpoint (small down) {
+    top: 80%;
+  }
+}
+
+// AND SCROLL
